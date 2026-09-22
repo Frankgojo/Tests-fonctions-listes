@@ -9,11 +9,11 @@ def test_est_pair_nombre_pair():
 
 def test_est_pair_nombre_impair():
     # TODO : tester un nombre impair
-
+    assert est_pair(3) == False
 
 # TODO (étudiant) : ajouter un test pour 0
-
-
+def test_est_pair_zero():
+    assert est_pair(0) == True
 # ================= ÉTAPE 2 : tests AVEC paramètres =================
 
 @pytest.mark.parametrize("note, attendu", [
@@ -21,16 +21,23 @@ def test_est_pair_nombre_impair():
     (70, "C"),
     (50, "F"),
     # TODO (étudiant) : ajouter un cas pour la note 80 -> "B"
-
+    (80,"B"),
     # TODO (étudiant) : ajouter un cas pour la note 89 -> "B"
-
+    (89,"B"),
 ])
 def test_note_lettre(note, attendu):
     assert note_lettre(note) == attendu
 
 
 # TODO : refait les tess de la fonction est_pair sous forme de test paramétré
+@pytest.mark.parametrize("nombre, attendu", [
+    (4, True),
+    (3, False),
+    (0, True),
 
+])
+def test_est_pair_nombre_impair(nombre, attendu):
+        assert est_pair(nombre) == attendu
 
 
 # ================= ÉTAPE 3 : fonction plus complexe (liste) =================

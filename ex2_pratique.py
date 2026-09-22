@@ -1,7 +1,11 @@
 # ÉTAPE 1 - fonction simple
 def est_pair(nombre):
     """Retourne True si le nombre est pair, False sinon."""
-    return nombre % 2 == 1
+    if nombre % 2 == 0:
+        return True
+    else:
+        return False
+
 
 
 # ÉTAPE 2 - fonction avec plusieurs cas (bonne pour les tests paramétrés)
